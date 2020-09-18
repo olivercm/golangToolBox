@@ -34,11 +34,13 @@ func (c *DemoCollector) Start(agtCtx context.Context) error {
 	fmt.Println("start collector", c.name)
 	for {
 		select {
+		//外部stop的时候，break
 		case <-agtCtx.Done():
 			c.stopChan <- struct{}{}
 			break
 		default:
 			time.Sleep(time.Millisecond * 50)
+			//每隔一段时间调用一次onEvent
 			c.evtReceiver.OnEvent(Event{c.name, c.content})
 		}
 	}
@@ -66,6 +68,7 @@ func TestAgent(t *testing.T) {
 	agt.RegisterCollector("c1", c1)
 	agt.RegisterCollector("c2", c2)
 	agt.Start()
+	//两次agent start，因为state，并没有两次启动
 	fmt.Println(agt.Start())
 	time.Sleep(time.Second * 1)
 	agt.Stop()
