@@ -12,6 +12,8 @@
 - 抽象扩展点行为，定义接口
 - 利用插件进行扩展
 
+案例架构图：
+![微内核案例架构图](../res/img/micro_kernel_demo_arch.png)
 
 参考：https://time.geekbang.org/course/detail/100024001-88543
 
