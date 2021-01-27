@@ -57,6 +57,7 @@ func NewServer(addr string, port int, options ...func(server *Server)) (*Server,
 	return &srv, nil
 }
 
+//reference: https://coolshell.cn/articles/21146.html
 func main() {
 	s1, _ := NewServer("localhost", 1024)
 	s2, _ := NewServer("localhost", 2048, Protocol("udp"))
