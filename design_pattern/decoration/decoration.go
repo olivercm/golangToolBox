@@ -41,6 +41,7 @@ func Sum2(start, end int64) int64 {
 	return (end - start + 1) * (end + start) / 2
 }
 
+//reference: https://coolshell.cn/articles/21228.html
 func main() {
 	sum1 := timedSumFunc(Sum1)
 	sum2 := timedSumFunc(Sum2)
