@@ -42,7 +42,7 @@ func Sum2(start, end int64) int64 {
 }
 
 //reference: https://coolshell.cn/articles/21228.html
-func main() {
+func main2() {
 	sum1 := timedSumFunc(Sum1)
 	sum2 := timedSumFunc(Sum2)
 	fmt.Printf("%d, %d\n", sum1(-1000, 10000000), sum2(-1000, 10000000))
